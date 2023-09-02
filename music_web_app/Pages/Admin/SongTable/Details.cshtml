@@ -1,0 +1,61 @@
+﻿@page
+@model music_web_app.Pages.Admin.SongTable.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<h1>Details</h1>
+
+<div>
+    <h4>Song</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Song.ImageSong)
+        </dt>
+        <dd class="col-sm-10">
+            <img src="@Model.Song.ImageSong" style="width:77px;height:77px" />
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Song.NameSong)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Song.NameSong)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Song.Lyric)
+        </dt>
+        <dd class="col-sm-10">
+            <textarea readonly style="height:360px;; width:499px" asp-for="@Model.Song.Lyric" class="form-control"></textarea>
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Song.Listens)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Song.Listens)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Song.DateUpload)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Song.DateUpload)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Song.Singer.NameSinger)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Song.Singer.NameSinger)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Song.CategorySong.NameCategory)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Song.CategorySong.NameCategory)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-success btn-sm" asp-page="./Edit" asp-route-id="@Model.Song.IdSong"><i class="bi bi-pencil"></i></a> |
+    <a class="btn btn-dark btn-sm" asp-page="./Index">Back to list</a>
+</div>

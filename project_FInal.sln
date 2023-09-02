@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "music_web_app", "music_web_app\music_web_app.csproj", "{613E4DF3-30FE-43D1-A119-B95ABF4D06E7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "music_web_model", "music_web_model\music_web_model.csproj", "{BB0D5B6F-A7A0-47B9-B844-0F894A033827}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{613E4DF3-30FE-43D1-A119-B95ABF4D06E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{613E4DF3-30FE-43D1-A119-B95ABF4D06E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{613E4DF3-30FE-43D1-A119-B95ABF4D06E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{613E4DF3-30FE-43D1-A119-B95ABF4D06E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB0D5B6F-A7A0-47B9-B844-0F894A033827}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB0D5B6F-A7A0-47B9-B844-0F894A033827}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB0D5B6F-A7A0-47B9-B844-0F894A033827}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB0D5B6F-A7A0-47B9-B844-0F894A033827}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CAF89ADA-4B1A-48BE-87EC-D79BBDA4AB59}
+	EndGlobalSection
+EndGlobal

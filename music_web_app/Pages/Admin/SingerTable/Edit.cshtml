@@ -1,0 +1,81 @@
+﻿@page
+@model music_web_app.Pages.Admin.SingerTable.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Singer</h4>
+<hr />
+<div>
+    <form method="post">
+        <input type="hidden" asp-for="Singer.IDSinger" />
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label" asp-for="Singer.NameSinger"></label>
+            <div class="col-sm-6">
+                <input asp-for="Singer.NameSinger" class="form-control" />
+                <span asp-validation-for="Singer.NameSinger" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label" asp-for="Singer.YearOfBirth"></label>
+            <div class="col-sm-6">
+                <input asp-for="Singer.YearOfBirth" class="form-control" />
+                <span asp-validation-for="Singer.YearOfBirth" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label" asp-for="Singer.Gender"></label>
+            <div class="col-sm-6">
+                <input asp-for="Singer.Gender" class="form-control" />
+                <span asp-validation-for="Singer.Gender" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label" asp-for="Singer.Nationality"></label>
+            <div class="col-sm-6">
+                <input asp-for="Singer.Nationality" class="form-control" />
+                <span asp-validation-for="Singer.Nationality" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3" style="display:none">
+            <label class="col-sm-3 col-form-label" asp-for="Singer.Avatar"></label>
+            <div class="col-sm-6">
+                <input asp-for="Singer.Avatar" class="form-control" />
+                <span asp-validation-for="Singer.Avatar" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label" asp-for="Singer.Biography"></label>
+            <div class="col-sm-6">
+                <textarea style="height: 333px;" asp-for="Singer.Biography" class="form-control"></textarea>
+                <span asp-validation-for="Singer.Biography" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label" asp-for="Singer.AddDate"></label>
+            <div class="col-sm-6">
+                <input readonly asp-for="Singer.AddDate" class="form-control" />
+                <span asp-validation-for="Singer.AddDate" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3" style="display:none">
+            <label class="col-sm-3 col-form-label" asp-for="Singer.UpdDate"></label>
+            <div class="col-sm-6">
+                <input asp-for="Singer.UpdDate" class="form-control" />
+                <span asp-validation-for="Singer.UpdDate" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <input type="submit" value="Save" class="btn btn-primary" />
+            <a style="margin-left: 10px;" class="btn btn-secondary" asp-page="./Index">Back to List</a>
+        </div>
+    </form>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

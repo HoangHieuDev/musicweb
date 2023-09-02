@@ -1,0 +1,76 @@
+﻿@page
+@model music_web_app.Pages.Admin.SingerTable.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<h1>Create</h1>
+<h4>Singer</h4>
+<hr />
+<div>
+    <form method="post" enctype="multipart/form-data">
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label" asp-for="Singer.NameSinger"></label>
+            <div class="col-sm-6">
+                <input asp-for="Singer.NameSinger" class="form-control" />
+                <span asp-validation-for="Singer.NameSinger" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label" asp-for="Singer.YearOfBirth"></label>
+            <div class="col-sm-6">
+                <input type="text" id="datepicker" class="form-control" asp-for="Singer.YearOfBirth" />
+                <span asp-validation-for="Singer.YearOfBirth" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label" asp-for="Singer.Gender"></label>
+            <div style="padding-left:10px" class="col-sm-6">
+                <input type="radio" name="Gender" value="Male" id="test" checked="checked" />Male
+                <input style="margin-left: 30px;" type="radio" name="Gender" value="Female" />Female
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label" asp-for="Singer.Nationality"></label>
+            <div class="col-sm-6">
+                <input asp-for="Singer.Nationality" class="form-control" />
+                <span asp-validation-for="Singer.Nationality" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label asp-for="@Model.file_avatar" class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-6">
+                <input class="form-control" type="file" asp-for="@Model.file_avatar">
+                <span asp-validation-for="@Model.file_avatar" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label" asp-for="Singer.Biography"></label>
+            <div class="col-sm-6">
+                <textarea style="height:300px" type="text" id="name" class="form-control" asp-for="Singer.Biography"></textarea>
+                <span asp-validation-for="Singer.Biography" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+<div>
+    <a class="btn btn-secondary" asp-page="Index">Back to List</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script>
+    $(function () {
+        $("#datepicker").datepicker({ dateFormat: 'dd-mm-yy' }).val();
+    });
+</script>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

@@ -1,0 +1,65 @@
+﻿@page
+@model music_web_app.Pages.Admin.SongTable.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Song</h4>
+<hr />
+<div>
+    <form method="post" enctype="multipart/form-data">
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label" asp-for="Song.NameSong"></label>
+            <div class="col-sm-6">
+                <input asp-for="Song.NameSong" class="form-control" />
+                <span asp-validation-for="Song.NameSong" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label" asp-for="Song.Lyric"></label>
+            <div class="col-sm-6">
+                <textarea type="text" style="height:300px" id="name" class="form-control" asp-for="Song.Lyric"></textarea>
+                <span asp-validation-for="Song.Lyric" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label" asp-for="Song.IdCategory"></label>
+            <div class="col-sm-6">
+                <select asp-for="Song.IdCategory" class="form-control" asp-items="ViewBag.IdCategory"></select>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label asp-for="Song.IdSinger" class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-6">
+                <select asp-for="Song.IdSinger" class="form-control" asp-items="ViewBag.IdSinger"></select>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label asp-for="@Model.file_image" class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-6">
+                <input class="form-control" type="file" asp-for="@Model.file_image">
+                <span asp-validation-for="@Model.file_image" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label asp-for="@Model.file_song" class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-6">
+                <input class="form-control" type="file" asp-for="@Model.file_song">
+                <span asp-validation-for="@Model.file_song" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <input type="submit" value="Create" class="btn btn-primary" />
+            <a style="margin-left: 10px;" class="btn btn-secondary" asp-page="Index">Back to List</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

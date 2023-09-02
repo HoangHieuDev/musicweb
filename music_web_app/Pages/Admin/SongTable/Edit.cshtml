@@ -1,0 +1,78 @@
+﻿@page
+@model music_web_app.Pages.Admin.SongTable.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Song</h4>
+<hr />
+<div>
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Song.IdSong" />
+        <div class="form-group" style="display:none">
+            <label asp-for="Song.URL" class="control-label"></label>
+            <input asp-for="Song.URL" class="form-control" />
+            <span asp-validation-for="Song.URL" class="text-danger"></span>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label" asp-for="Song.NameSong"></label>
+            <div class="col-sm-6">
+                <input asp-for="Song.NameSong" class="form-control" />
+                <span asp-validation-for="Song.NameSong" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label" asp-for="Song.Lyric"></label>
+            <div class="col-sm-6">
+                <textarea type="text" style="height:300px" id="name" class="form-control" asp-for="Song.Lyric"></textarea>
+                <span asp-validation-for="Song.Lyric" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label" asp-for="Song.Listens"></label>
+            <div class="col-sm-6">
+                <input readonly asp-for="Song.Listens" class="form-control" />
+                <span asp-validation-for="Song.Listens" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label" asp-for="Song.DateUpload"></label>
+            <div class="col-sm-6">
+                <input readonly asp-for="Song.DateUpload" class="form-control" />
+                <span asp-validation-for="Song.DateUpload" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label" asp-for="Song.IdCategory"></label>
+            <div class="col-sm-6">
+                <select asp-for="Song.IdCategory" class="form-control" asp-items="ViewBag.IdCategory"></select>
+                <span asp-validation-for="Song.IdCategory" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label" asp-for="Song.IdCategory"></label>
+            <div class="col-sm-6">
+                <select asp-for="Song.IdSinger" class="form-control" asp-items="ViewBag.IdSinger"></select>
+                <span asp-validation-for="Song.IdCategory" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group" style="display:none">
+            <label asp-for="Song.ImageSong" class="control-label"></label>
+            <input asp-for="Song.ImageSong" class="form-control" />
+            <span asp-validation-for="Song.ImageSong" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+            <a style="margin-left: 10px;" class="btn btn-secondary" asp-page="./Index">Back to List</a>
+        </div>
+    </form>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
