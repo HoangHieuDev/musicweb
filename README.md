@@ -1,5 +1,5 @@
 The project is inspired by a music website similar to zingmp3
-# Ludo Game
+# Music web
 <div align='center'>
 
 ![Javascript](https://img.shields.io/badge/Javascript-Language-yellow)
